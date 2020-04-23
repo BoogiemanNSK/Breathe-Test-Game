@@ -1,33 +1,39 @@
 ﻿using UnityEngine;
 
-public class Controller2D : PhysicsObject {
-    public float MaxSpeed = 7;
-    public float JumpTakeOffSpeed = 7;
+public class Controller2D : MonoBehaviour {
 
+    public float MoveSpeed;
+    public float JumpForce;
+    public float GravityScale;
+    
+    private CharacterController _playerPhysics;
     //private Animator _animator;
+    private Vector3 _moveDirection;
+    private int _jumpsCount;
 
-    // Use this for initialization
-    private void Awake () {
-        //_animator = GetComponent<Animator> ();
+    private void Start() {
+        _playerPhysics = GetComponent<CharacterController>();
+        //_animator = GetComponent<Animator>();
+
+        _jumpsCount = 0;
     }
 
-    protected override void ComputeVelocity() {
-        var move = Vector2.zero;
+    private void Update() {
+        _moveDirection = new Vector3(Input.GetAxis("Horizontal") * MoveSpeed, _moveDirection.y);
 
-        move.x = Input.GetAxis ("Horizontal");
-
-        if (Input.GetButtonDown ("Jump") && Grounded) {
-            Velocity.y = JumpTakeOffSpeed;
-        } else if (Input.GetButtonUp ("Jump")) 
-        {
-            if (Velocity.y > 0) {
-                Velocity.y *= 0.5f;
+        if (_playerPhysics.isGrounded) {
+            _jumpsCount = 0;
+        }
+        
+        if (Input.GetAxis("Vertical") > 0 && Input.GetButtonDown("Vertical")) {
+            if (_jumpsCount < 2) {
+                _moveDirection = new Vector3(_playerPhysics.velocity.x, JumpForce);
+                _jumpsCount++;
             }
         }
 
-        //_animator.SetBool ("grounded", Grounded);
-        //_animator.SetFloat ("velocityX", Mathf.Abs (Velocity.x) / MaxSpeed);
-
-        TargetVelocity = move * MaxSpeed;
+        _moveDirection.y += Physics.gravity.y * GravityScale;
+        _playerPhysics.Move(_moveDirection * Time.deltaTime);
     }
+    
 }
