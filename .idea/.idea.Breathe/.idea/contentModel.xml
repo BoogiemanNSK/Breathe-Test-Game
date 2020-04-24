@@ -29,6 +29,7 @@
           <e p="Menu" t="Include">
             <e p="MenuController.cs" t="Include" />
           </e>
+          <e p="MusicController.cs" t="Include" />
           <e p="UI" t="Include">
             <e p="CoinsCounter.cs" t="Include" />
             <e p="EndingScreen.cs" t="Include" />
