@@ -32,7 +32,7 @@ public class Controller2D : MonoBehaviour {
             }
         }
 
-        _moveDirection.y += Physics.gravity.y * GravityScale;
+        _moveDirection.y += Physics.gravity.y * GravityScale * Time.deltaTime;
         _playerPhysics.Move(_moveDirection * Time.deltaTime);
     }
     

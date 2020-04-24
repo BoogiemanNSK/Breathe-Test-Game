@@ -9,6 +9,31 @@
             <e p="CameraController.cs" t="Include" />
             <e p="Controller2D.cs" t="Include" />
           </e>
+          <e p="Constants.cs" t="Include" />
+          <e p="Enemies" t="Include">
+            <e p="MeleeAI.cs" t="Include" />
+            <e p="RangeAI.cs" t="Include" />
+          </e>
+          <e p="EventManager.cs" t="Include" />
+          <e p="GameState.cs" t="Include" />
+          <e p="GameStateController.cs" t="Include" />
+          <e p="InitScript.cs" t="Include" />
+          <e p="Level" t="Include">
+            <e p="CoinTrigger.cs" t="Include" />
+            <e p="ElevatorButton.cs" t="Include" />
+            <e p="ElevatorController.cs" t="Include" />
+            <e p="ElevatorTrigger.cs" t="Include" />
+            <e p="ExitController.cs" t="Include" />
+            <e p="KeyTrigger.cs" t="Include" />
+          </e>
+          <e p="Menu" t="Include">
+            <e p="MenuController.cs" t="Include" />
+          </e>
+          <e p="UI" t="Include">
+            <e p="CoinsCounter.cs" t="Include" />
+            <e p="EndingScreen.cs" t="Include" />
+            <e p="MessageController.cs" t="Include" />
+          </e>
         </e>
       </e>
       <e p="Breathe.sln" t="IncludeFlat" />
@@ -16,7 +41,7 @@
       <e p="Packages" t="ExcludeRecursive" />
       <e p="Temp\bin" t="ExcludeRecursive" />
     </e>
-    <e p="C:\Users\Пётр\.Rider2019.3\system\extResources" t="IncludeRecursive" />
-    <e p="C:\Users\Пётр\.Rider2019.3\system\resharper-host\local\Transient\ReSharperHost\v193\SolutionCaches\_Breathe.-1126955466.00" t="ExcludeRecursive" />
+    <e p="C:\Users\Пётр\AppData\local\JetBrains\Rider2020.1\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\Пётр\AppData\local\JetBrains\Rider2020.1\resharper-host\local\Transient\ReSharperHost\v201\SolutionCaches\_Breathe.-1126955466.00" t="ExcludeRecursive" />
   </component>
 </project>
