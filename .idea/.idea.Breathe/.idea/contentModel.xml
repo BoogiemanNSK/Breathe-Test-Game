@@ -8,6 +8,7 @@
           <e p="Character" t="Include">
             <e p="CameraController.cs" t="Include" />
             <e p="Controller2D.cs" t="Include" />
+            <e p="Player.cs" t="Include" />
           </e>
           <e p="Constants.cs" t="Include" />
           <e p="Enemies" t="Include">
@@ -16,7 +17,6 @@
           </e>
           <e p="EventManager.cs" t="Include" />
           <e p="GameState.cs" t="Include" />
-          <e p="GameStateController.cs" t="Include" />
           <e p="InitScript.cs" t="Include" />
           <e p="Level" t="Include">
             <e p="CoinTrigger.cs" t="Include" />

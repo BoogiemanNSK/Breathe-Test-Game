@@ -4,6 +4,7 @@ public class InitScript : MonoBehaviour {
     
     private void Start() {
         EventManager.InitDict();
+        GameState.ResetGameState();
     }
     
 }

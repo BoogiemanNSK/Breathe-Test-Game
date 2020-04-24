@@ -2,6 +2,7 @@
 
     private static bool _keyAcquired;
     private static int _coinsCollected;
+    private static bool _gameFinished;
 
     public static bool IsKeyAcquired() {
         return _keyAcquired;
@@ -9,6 +10,10 @@
 
     public static int CollectedCoins() {
         return _coinsCollected; 
+    }
+    
+    public static bool IsGameFinished() {
+        return _gameFinished;
     }
 
     public static void AcquireKey() {
@@ -21,9 +26,14 @@
         EventManager.TriggerEvent(Constants.COIN_COLLECT_EVENT_NAME);
     }
 
+    public static void FinishGame() {
+        _gameFinished = true;
+    }
+
     public static void ResetGameState() {
         _coinsCollected = 0;
         _keyAcquired = false;
+        _gameFinished = false;
     }
 
 }

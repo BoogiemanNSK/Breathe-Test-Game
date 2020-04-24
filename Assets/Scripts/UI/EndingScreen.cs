@@ -14,10 +14,12 @@ public class EndingScreen : MonoBehaviour {
     }
 
     public void OnRestartClick() {
+        GameState.ResetGameState();
         SceneManager.LoadScene(Constants.MAIN_SCENE_NAME);
     }
 
     public void OnExitClick() {
+        GameState.ResetGameState();
         SceneManager.LoadScene(Constants.MENU_SCENE_NAME);
     }
     
