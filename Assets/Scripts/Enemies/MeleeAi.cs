@@ -4,6 +4,7 @@ public class MeleeAi : MonoBehaviour {
 
     public int MoveSpeed;
     public Collider PointA, PointB; // A - Left, B - Right
+    public AudioSource Audio;
 
     private Vector3 _moveDirection;
 
@@ -27,6 +28,11 @@ public class MeleeAi : MonoBehaviour {
         if (other == PointB) {
             _moveDirection = Vector3.left * MoveSpeed;
         }
+    }
+
+    public void Die() {
+        Audio.Play();
+        Destroy(gameObject);
     }
     
 }

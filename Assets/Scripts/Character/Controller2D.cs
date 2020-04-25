@@ -5,14 +5,16 @@ public class Controller2D : MonoBehaviour {
     public float MoveSpeed;
     public float JumpForce;
     public float GravityScale;
+    public GameObject Char;
     
     private CharacterController _playerPhysics;
     private Vector3 _moveDirection;
-    private int _jumpsCount;
+    private int _jumpsCount, _lastDir;
     
     private void Start() {
         _playerPhysics = GetComponent<CharacterController>();
         _jumpsCount = 0;
+        _lastDir = 1;
     }
 
     private void Update() {
@@ -29,6 +31,14 @@ public class Controller2D : MonoBehaviour {
                 _moveDirection = new Vector3(_playerPhysics.velocity.x, JumpForce);
                 _jumpsCount++;
             }
+        }
+
+        var dir = 0;
+        if (_moveDirection.x > 0) { dir = 1; }
+        if (_moveDirection.x < 0) { dir = -1; }
+        if (dir != 0 && dir != _lastDir) {
+            Char.transform.Rotate(0, 180, 0);
+            _lastDir = dir;
         }
 
         _moveDirection.y += Physics.gravity.y * GravityScale * Time.deltaTime;

@@ -21,6 +21,7 @@ public class ElevatorButton : MonoBehaviour {
                 Controller.OnTriggered(0);
                 Sound.Play();
                 KeyIcon.SetActive(false);
+                GameState.IncreaseLevel();
             }
         }
     }

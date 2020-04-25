@@ -1,7 +1,8 @@
 ﻿public static class GameState {
 
-    private static bool _keyAcquired;
+    private static int _playerLevel;
     private static int _coinsCollected;
+    private static bool _keyAcquired;
     private static bool _gameFinished;
 
     public static bool IsKeyAcquired() {
@@ -14,6 +15,10 @@
     
     public static bool IsGameFinished() {
         return _gameFinished;
+    }
+
+    public static int GetPlayerLevel() {
+        return _playerLevel;
     }
 
     public static void AcquireKey() {
@@ -30,7 +35,12 @@
         _gameFinished = true;
     }
 
+    public static void IncreaseLevel() {
+        _playerLevel++;
+    }
+
     public static void ResetGameState() {
+        _playerLevel = 0;
         _coinsCollected = 0;
         _keyAcquired = false;
         _gameFinished = false;

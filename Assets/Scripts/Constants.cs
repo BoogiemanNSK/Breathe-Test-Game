@@ -2,6 +2,8 @@
     
     // Tags
     public const string PLAYER_TAG = "Player";
+    public const string MELEE_TAG = "Melee";
+    public const string RANGED_TAG = "Ranged";
 
     // Scene Names
     public const string MAIN_SCENE_NAME = "Main";
@@ -23,5 +25,9 @@
 
     // Integer Constants
     public const int MAX_COINS = 3;
+
+    // Animator Constants
+    public const string ANIM_IS_WALKING = "IsWalking";
+    public const string ANIM_JUMP = "Jump";
 
 }

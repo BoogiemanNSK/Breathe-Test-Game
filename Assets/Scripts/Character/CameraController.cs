@@ -3,6 +3,7 @@
 public class CameraController : MonoBehaviour {
 
     public Transform Target;
+    public float SmoothSpeed = 0.125f;
     
     private Vector3 _offset;
 
@@ -10,8 +11,12 @@ public class CameraController : MonoBehaviour {
         _offset = Target.position - transform.position;
     }
 
-    private void Update() {
-        transform.position = Target.position - _offset;
+    private void LateUpdate() {
+        Vector3 desiredPos = Target.position - _offset;
+        Vector3 smoothedPos = Vector3.Lerp(transform.position, desiredPos, SmoothSpeed);
+        transform.position = smoothedPos;
+
+        transform.LookAt(Target);
     }
     
 }
